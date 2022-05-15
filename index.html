@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>/* Center all h1 and h2 elements */
+        h1, h2 {
+          text-align: center;
+          position: relative;
+          top: -50%;
+          left: 50%;
+          transform: translate(-50%, 50%);
+        }
+    </style>
+    <title>test</title>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <h2 id="datetime"></h2>
+    <script>//display student info with a class
+        class Student {
+            constructor(name, age, grade) {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            }
+            //method to display student info
+            displayInfo() {
+                document.getElementById("text").innerHTML = "Name: " + this.name + "<br>Age: " + this.age + "<br>Grade: " + this.grade;
+            }
+        }
+        
+        class DateTime {
+            constructor() {
+                this.date = new Date();
+            }
+            //method to display date and time
+            displayDateTime() {
+                document.getElementById("datetime").innerHTML = "Date: " + this.date.toDateString() + "<br>Time: " + this.date.toLocaleTimeString();
+            }
+        }
+        
+        function MK() {
+            let name = prompt("Enter your name");
+            let age = prompt("Enter your age");
+            let grade = prompt("Enter your grade");
+        
+            var student = new Student(name, age, grade);
+            var dateTime = new DateTime();
+            student.displayInfo();
+            dateTime.displayDateTime();
+        }
+        
+        var YN = prompt("Would you like to start? (Y/N)");
+        
+        if (YN == "Y") {
+            MK();
+        }
+        else {
+            alert("Goodbye!");
+        }
+        </script>
+</body>
+</html>
